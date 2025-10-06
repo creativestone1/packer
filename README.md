@@ -1,27 +1,33 @@
 # packer
 
-Simple archiver program for packing and unpacking files or directories.
+Simple packer program for packing and unpacking files or directories.
 
 ## Overview
 
-This project provides a command-line tool `archiver` that can create archives from files or directories and extract archives back to files or directories.
+This project provides a command-line tool `packer` that can create archives from files or directories and extract archives back to files or directories.
+
+## Build
+
+```shell
+gcc main.c -opacker
+```
 
 ## Usage
 ```shell
-archiver [OPTION] [FILE]
+packer [OPTION] [FILE]
 ```
 
 
 ### Options:
 
 - `-p <fileIn> [<pathOut>]`  
-  Pack (archive) the specified file or directory.  
+  Pack (pack) the specified file or directory.  
   - `<fileIn>` is the path to the file or directory to pack.  
-  - `[<pathOut>]` is optional output path for the archive.
+  - `[<pathOut>]` is optional output path for the pack.
 
 - `-u <fileIn> [<pathOut>]`  
-  Unpack (extract) the specified archive.  
-  - `<fileIn>` is the path to the archive file.  
+  Unpack (extract) the specified pack.  
+  - `<fileIn>` is the path to the pack file.  
   - `[<pathOut>]` is optional output directory for the extracted contents.
 
 - `-h`  
@@ -30,22 +36,22 @@ archiver [OPTION] [FILE]
 ## Examples
 
 ```shell
-archiver -p myfolder
+packer -p myfolder
 ```
 Pack the folder `myfolder` in the current directory.
 
 ```shell
-archiver -p path/myfolder pathOut
+packer -p path/myfolder pathOut
 ```
-Pack the folder `myfolder` in the current directory and output archive to `pathOut`.
+Pack the folder `myfolder` in the current directory and output pack to `pathOut`.
 
 ```shell
-archiver -u archive.arc
+packer -u pack.arc
 ```
-Unpack `archive.arc` archive in the current directory.
+Unpack `pack.arc` pack in the current directory.
 
 ```shell
-archiver -h
+packer -h
 ```
 Show the help message.
 
